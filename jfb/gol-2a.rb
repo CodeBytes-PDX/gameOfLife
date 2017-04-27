@@ -19,7 +19,7 @@ while true do
     (0..9).each { |col| print col }
     print "\n"
     top_bottom_border = ' '
-    (1..(cells[0].size + 2)).each { 'x'
+    (1..(cells[0].size + 2)).each {
 	top_bottom_border += '-'
     }
     print top_bottom_border + "\n"
