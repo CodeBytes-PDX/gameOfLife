@@ -34,11 +34,6 @@ class World
 end
 
 world = World.new
-#world.cells << Cell.new(world)
-#world.cells << Cell.new(world, 1, 1)
-
-puts world.inspect
 
 puts world.cells[0].neighbors(world.cells[1])
-
-puts world.inspect
+puts world.cells[0].neighbors(world.cells[4])
