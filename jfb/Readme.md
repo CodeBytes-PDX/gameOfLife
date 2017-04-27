@@ -1,4 +1,4 @@
-###### Game of Life code
+# Game of Life code
 
 * `gol-1.rb` is an object-oriented take, including my own tweaks to code
   develped with Nick App and Nader Mortazavi. The extremely basic output
