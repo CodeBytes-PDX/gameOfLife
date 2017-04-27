@@ -9,3 +9,5 @@
   with neighbor counts and what should happen to it based on the four rules.
 
 * `gol-3.py` is essentially the same as `gol-2.rb`, but implemented in python.
+  Besides the language, the main change is that the array of neighbors contains
+  live/dead status rather than coordinates as in the ruby version.
