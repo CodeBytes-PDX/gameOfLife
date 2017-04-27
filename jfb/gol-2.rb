@@ -11,7 +11,6 @@ cells = []
 }
 
 (0..(cells.size-1)).each { |row_self|
-    #puts cells[row_self].to_s
 
     row_up = (row_self - 1) % 10
     row_down = (row_self + 1) % 10
