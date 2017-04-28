@@ -15,6 +15,13 @@
   for realsies). The cell matrix is animated with one-second pauses
   between frames.
 
+* `gol-2b.rb` is further work on `gol-2a.rb`. Command-line options are now
+   available, and the initial matrix is read from `cell_config.yml`. During
+   run-time, the number of iterations is now displayed, and the cursor is
+   merely homed between redraws instead of a full screen-clear. The script
+   exits if a period 2 oscillation is encountered or if cell growth and
+   death become impossible (fixed matrix).
+
 * `gol-3.py` is essentially the same as `gol-2.rb`, but implemented in python.
   Besides the language, the main change is that the array of neighbors contains
   live/dead status rather than coordinates as in the ruby version.
