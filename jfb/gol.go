@@ -1,6 +1,7 @@
 package main
 
 import (
+    "flag"
     "fmt"
     "encoding/json"
     "io/ioutil"
@@ -84,8 +85,10 @@ func main() {
 
     var config Config
 
+    delay_sec := flag.Float64("delay", 1.0, "delay between frames in seconds, non-integer values OK")
+    flag.Parse()
+
     matrix_name := "matrix_50x40_3095"
-    delay_sec := .01
 
     source, err := ioutil.ReadFile("cell_config.json")
     if err != nil {
@@ -99,10 +102,12 @@ func main() {
 
     matrix := config.Matrix[matrix_name]
 
+    // because I haven't figured out (n)curses in go:
+    // shell out to clear the screen
     cmd := exec.Command("clear")
     cmd.Stdout = os.Stdout
     cmd.Run()
-
+    // and then shell out to capture the string for homing the cursor
     cmd = exec.Command("tput", "home")
     cursor_home, err := cmd.Output()
 
@@ -111,9 +116,8 @@ func main() {
 	matrix_print(matrix)
 	fmt.Print("Iteration ", iter)
 
-	if delay_sec > 0 {
-	    timer1 := time.NewTimer(time.Millisecond * time.Duration(1000 * delay_sec))
-	    <-timer1.C
+	if *delay_sec > 0 {
+	    time.Sleep(time.Duration(*delay_sec * 1000) * time.Millisecond)
 	}
 	matrix = matrix_iterate(matrix)
 
