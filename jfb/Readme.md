@@ -25,3 +25,8 @@
 * `gol-3.py` is essentially the same as `gol-2.rb`, but implemented in python.
   Besides the language, the main change is that the array of neighbors contains
   live/dead status rather than coordinates as in the ruby version.
+
+* `gol.go` is a Go implementation.
+  * The inter-frame delay can be specified on the command line.
+  * The matrix filename and matrix name are hardcoded.
+  * The program does not detect a fixed matrix or a period 2 oscillation.
